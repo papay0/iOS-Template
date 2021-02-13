@@ -221,27 +221,11 @@
 		70B0EA9425D83621006EAA9B /* Platform */ = {
 			isa = PBXGroup;
 			children = (
-				70B0EA9825D837C4006EAA9B /* ViewController */,
-				70B0EA9525D83628006EAA9B /* View */,
+				70B0EA9625D8363A006EAA9B /* View.swift */,
+				70B0EA9925D837D1006EAA9B /* ViewController.swift */,
 				70E01FBB25D83A440072FDBE /* SpacingUnits.swift */,
 			);
 			path = Platform;
-			sourceTree = "<group>";
-		};
-		70B0EA9525D83628006EAA9B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				70B0EA9625D8363A006EAA9B /* View.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		70B0EA9825D837C4006EAA9B /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				70B0EA9925D837D1006EAA9B /* ViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8D97E58CE9B688BDC9479CB1 /* Pods */ = {

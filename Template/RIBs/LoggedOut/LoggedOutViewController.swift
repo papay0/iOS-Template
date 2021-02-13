@@ -24,7 +24,6 @@ final class LoggedOutViewController: ViewController, LoggedOutPresentable, Logge
     
     override func loadView() {
         view = internalView
-        view.frame = UIScreen.main.bounds
     }
 }
 
