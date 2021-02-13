@@ -16,12 +16,21 @@ protocol LoggedOutPresentableListener: class {
     // interactor class.
 }
 
-final class LoggedOutViewController: UIViewController, LoggedOutPresentable, LoggedOutViewControllable {
+final class LoggedOutViewController: ViewController, LoggedOutPresentable, LoggedOutViewControllable {
 
     weak var listener: LoggedOutPresentableListener?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .blue
+    private lazy var internalView = LoggedOutView()
+    
+    override func loadView() {
+        view = internalView
+        view.frame = UIScreen.main.bounds
+    }
+}
+
+private final class LoggedOutView: View {
+    override init() {
+        super.init()
+        backgroundColor = .blue
     }
 }

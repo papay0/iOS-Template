@@ -7,6 +7,7 @@ target 'Template' do
 
   # Pods for Template
   pod 'RIBs', :git => 'https://github.com/uber/RIBs.git'
+  pod 'SnapKit'
 
   target 'TemplateTests' do
     inherit! :search_paths
