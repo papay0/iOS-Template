@@ -6,7 +6,7 @@ target 'Template' do
   use_frameworks!
 
   # Pods for Template
-  pod 'RIBs', '~> 0.9'
+  pod 'RIBs', :git => 'https://github.com/uber/RIBs.git'
 
   target 'TemplateTests' do
     inherit! :search_paths

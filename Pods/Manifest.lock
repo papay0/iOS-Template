@@ -1,20 +1,33 @@
 PODS:
-  - RIBs (0.9.1):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.5.0)
+  - RIBs (0.9.3):
+    - RxRelay (~> 5.1)
+    - RxSwift (~> 5.1)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
-  - RIBs (~> 0.9)
+  - RIBs (from `https://github.com/uber/RIBs.git`)
 
 SPEC REPOS:
   trunk:
-    - RIBs
+    - RxRelay
     - RxSwift
 
-SPEC CHECKSUMS:
-  RIBs: 879184fbca567425c488d6b3d14a9c5abfbf9d47
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+EXTERNAL SOURCES:
+  RIBs:
+    :git: https://github.com/uber/RIBs.git
 
-PODFILE CHECKSUM: 05be1cf0f21c4860f21f7315ccd0d026e8fc6ede
+CHECKOUT OPTIONS:
+  RIBs:
+    :commit: 676f74243650c4f2afe5c2df977a224fc56155bb
+    :git: https://github.com/uber/RIBs.git
+
+SPEC CHECKSUMS:
+  RIBs: d4c4c7e7e4580f0bbe88bdc88b6c11704a738b7f
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+
+PODFILE CHECKSUM: fcd9c48c8d301ddc01a49d878c58c6637d42d081
 
 COCOAPODS: 1.10.1
