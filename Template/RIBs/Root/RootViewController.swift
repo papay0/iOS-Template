@@ -20,8 +20,8 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
 
     weak var listener: RootPresentableListener?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
+    func present(viewController: ViewControllable) {
+        viewController.uiviewController.modalPresentationStyle = .currentContext
+        present(viewController.uiviewController, animated: true, completion: nil)
     }
 }
