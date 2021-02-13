@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Template-TemplateUITests/Pods-Template-TemplateUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RIBs/RIBs.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
