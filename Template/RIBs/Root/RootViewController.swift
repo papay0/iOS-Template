@@ -16,6 +16,8 @@ protocol RootPresentableListener: class {
     // interactor class.
 }
 
+extension RootViewController: LoggedInViewControllable {}
+
 final class RootViewController: UIViewController, RootPresentable, RootViewControllable {
 
     weak var listener: RootPresentableListener?
@@ -23,5 +25,11 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     func present(viewController: ViewControllable) {
         viewController.uiviewController.modalPresentationStyle = .currentContext
         present(viewController.uiviewController, animated: false, completion: nil)
+    }
+    
+    func dismiss(viewController: ViewControllable) {
+        if presentedViewController === viewController.uiviewController {
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
