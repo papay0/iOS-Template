@@ -11,7 +11,7 @@ import RxSwift
 
 protocol LoggedInRouting: Routing {
     func cleanupViews()
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeToHome()
 }
 
 protocol LoggedInListener: class {
@@ -29,7 +29,7 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        router?.routeToHome()
     }
 
     override func willResignActive() {

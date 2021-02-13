@@ -14,8 +14,8 @@ protocol RootInteractable: Interactable, LoggedOutListener, LoggedInListener {
 }
 
 protocol RootViewControllable: ViewControllable {
-    func present(viewController: ViewControllable)
-    func dismiss(viewController: ViewControllable)
+    func present(viewController: ViewControllable, animated: Bool)
+    func dismiss(viewController: ViewControllable, animated: Bool)
 }
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
@@ -38,20 +38,20 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     func routeToLoggedOut() {
         if let loggedOutRouter = self.loggedOutRouter {
             detachChild(loggedOutRouter)
-            viewController.dismiss(viewController: loggedOutRouter.viewControllable)
+            viewController.dismiss(viewController: loggedOutRouter.viewControllable, animated: false)
             self.loggedInRouter = nil
         }
         
         let loggedOutRouter = loggedOutBuilder.build(withListener: interactor)
         self.loggedOutRouter = loggedOutRouter
         attachChild(loggedOutRouter)
-        viewController.present(viewController: loggedOutRouter.viewControllable)
+        viewController.present(viewController: loggedOutRouter.viewControllable, animated: false)
     }
     
     func routeToLoggedIn() {
         if let loggedOutRouter = self.loggedOutRouter {
             detachChild(loggedOutRouter)
-            viewController.dismiss(viewController: loggedOutRouter.viewControllable)
+            viewController.dismiss(viewController: loggedOutRouter.viewControllable, animated: false)
             self.loggedOutRouter = nil
         }
 

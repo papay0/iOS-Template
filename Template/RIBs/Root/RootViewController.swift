@@ -22,14 +22,14 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
 
     weak var listener: RootPresentableListener?
     
-    func present(viewController: ViewControllable) {
+    func present(viewController: ViewControllable, animated: Bool) {
         viewController.uiviewController.modalPresentationStyle = .currentContext
-        present(viewController.uiviewController, animated: false, completion: nil)
+        present(viewController.uiviewController, animated: animated, completion: nil)
     }
     
-    func dismiss(viewController: ViewControllable) {
+    func dismiss(viewController: ViewControllable, animated: Bool) {
         if presentedViewController === viewController.uiviewController {
-            dismiss(animated: true, completion: nil)
+            dismiss(animated: animated, completion: nil)
         }
     }
 }
