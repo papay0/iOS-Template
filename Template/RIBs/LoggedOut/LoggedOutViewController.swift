@@ -16,21 +16,41 @@ protocol LoggedOutPresentableListener: class {
     // interactor class.
 }
 
-final class LoggedOutViewController: ViewController, LoggedOutPresentable, LoggedOutViewControllable {
-
+final class LoggedOutViewController: ViewController,
+LoggedOutPresentable,
+LoggedOutViewControllable,
+LoggedOutViewListener {
+    
     weak var listener: LoggedOutPresentableListener?
     
     private lazy var internalView = LoggedOutView()
     
+    override init() {
+        super.init()
+        internalView.listener = self
+    }
+    
     override func loadView() {
         view = internalView
     }
+    
+    // MARK: - LoggedOutViewListener
+    
+    func didTapLoginButton() {
+        print("tapped")
+    }
+}
+
+protocol LoggedOutViewListener: AnyObject {
+    func didTapLoginButton()
 }
 
 private final class LoggedOutView: View {
     
     private let containerView: View
     private let loginButton: UIButton
+    
+    weak var listener: LoggedOutViewListener?
     
     override init() {
         containerView = View()
@@ -57,7 +77,7 @@ private final class LoggedOutView: View {
     // MARK: - Private
     
     @objc private func didTapLoginButton() {
-        print("tapped")
+        listener?.didTapLoginButton()
     }
     
     private func setupSubviews() {
