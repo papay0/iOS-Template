@@ -28,8 +28,46 @@ final class LoggedOutViewController: ViewController, LoggedOutPresentable, Logge
 }
 
 private final class LoggedOutView: View {
+    
+    private let containerView: View
+    private let loginButton: UIButton
+    
     override init() {
+        containerView = View()
+        loginButton = UIButton()
         super.init()
-        backgroundColor = .blue
+    }
+    
+    override func build() {
+        super.build()
+        setupSubviews()
+        setupButtons()
+    }
+    
+    override func setupConstraints() {
+        super.setupConstraints()
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        loginButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+    
+    // MARK: - Private
+    
+    @objc private func didTapLoginButton() {
+        print("tapped")
+    }
+    
+    private func setupSubviews() {
+        addSubview(containerView)
+        containerView.addSubview(loginButton)
+    }
+    
+    private func setupButtons() {
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitleColor(.blue, for: .normal)
+        loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
     }
 }
