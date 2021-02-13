@@ -11,6 +11,7 @@ import RxSwift
 
 protocol RootRouting: ViewableRouting {
     func routeToLoggedOut()
+    func routeToLoggedIn()
 }
 
 protocol RootPresentable: Presentable {
@@ -37,5 +38,12 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     override func didBecomeActive() {
         super.didBecomeActive()
         router?.routeToLoggedOut()
+    }
+    
+    // MARK: - LoggedOutListener
+    
+    func login() {
+        // Network call
+        router?.routeToLoggedIn()
     }
 }

@@ -38,6 +38,10 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         viewController.present(viewController: loggedOutRouter.viewControllable)
     }
     
+    func routeToLoggedIn() {
+        print("func routeToLoggedIn()")
+    }
+    
     // MARK: - Private
     
     private var loggedOutRouter: ViewableRouting?
