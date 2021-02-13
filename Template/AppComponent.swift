@@ -9,6 +9,14 @@
 import RIBs
 
 class AppComponent: Component<EmptyDependency>, RootDependency {
+    
+    var mutableUserStream: MutableUserStreaming {
+        return shared { UserStream() }
+    }
+    
+    var networkService: NetworkServicing {
+        return shared { NetworkService(mutableUserStream: mutableUserStream) }
+    }
 
     init() {
         super.init(dependency: EmptyComponent())

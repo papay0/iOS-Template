@@ -16,12 +16,31 @@ protocol HomePresentableListener: class {
     // interactor class.
 }
 
-final class HomeViewController: UIViewController, HomePresentable, HomeViewControllable {
+final class HomeViewController: ViewController, HomePresentable, HomeViewControllable {
 
     weak var listener: HomePresentableListener?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
+    private lazy var internalView = HomeView()
+    
+    override func loadView() {
+        view = internalView
+    }
+    
+    // MARK: - HomePresentable
+    
+    func displayUserName(name: String) {
+        internalView.displayUserName(name: name)
+    }
+}
+
+private final class HomeView: View {
+    
+    override init() {
+        super.init()
+        backgroundColor = .red
+    }
+    
+    func displayUserName(name: String) {
+        print("name = \(name)")
     }
 }

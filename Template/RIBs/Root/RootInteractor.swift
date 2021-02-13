@@ -28,9 +28,10 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     weak var router: RootRouting?
     weak var listener: RootListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: RootPresentable) {
+    private let networkService: NetworkServicing
+    
+    init(presenter: RootPresentable, networkService: NetworkServicing) {
+        self.networkService = networkService
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -43,7 +44,7 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     // MARK: - LoggedOutListener
     
     func login() {
-        // Network call
+        networkService.login()
         router?.routeToLoggedIn()
     }
 }

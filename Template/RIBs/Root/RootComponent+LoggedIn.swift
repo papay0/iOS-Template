@@ -21,5 +21,9 @@ extension RootComponent: LoggedInDependency {
     var loggedInViewController: LoggedInViewControllable {
         return rootViewController
     }
+    
+    var mutableUserStream: MutableUserStreaming {
+        return dependency.mutableUserStream
+    }
 }
 

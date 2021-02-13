@@ -10,6 +10,7 @@ import RIBs
 
 protocol LoggedInDependency: Dependency {
     var loggedInViewController: LoggedInViewControllable { get }
+    var mutableUserStream: MutableUserStreaming { get }
 }
 
 final class LoggedInComponent: Component<LoggedInDependency>, HomeDependency {
@@ -18,7 +19,9 @@ final class LoggedInComponent: Component<LoggedInDependency>, HomeDependency {
         return dependency.loggedInViewController
     }
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    var userStream: UserStreaming {
+        return dependency.mutableUserStream
+    }
 }
 
 // MARK: - Builder

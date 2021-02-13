@@ -9,13 +9,17 @@
 import RIBs
 
 protocol RootDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var networkService: NetworkServicing { get }
+    var mutableUserStream: MutableUserStreaming { get }
 }
 
 final class RootComponent: Component<RootDependency> {
 
     let rootViewController: RootViewController
+    
+    var networkService: NetworkServicing {
+        return dependency.networkService
+    }
     
     init(dependency: RootDependency,
          rootViewController: RootViewController) {
@@ -40,7 +44,7 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
         let viewController = RootViewController()
         let component = RootComponent(dependency: dependency,
                                       rootViewController: viewController)
-        let interactor = RootInteractor(presenter: viewController)
+        let interactor = RootInteractor(presenter: viewController, networkService: component.networkService)
         
         let loggedOutBuilder = LoggedOutBuilder(dependency: component)
         let loggedInBuilder = LoggedInBuilder(dependency: component)

@@ -15,6 +15,9 @@
 		7059964225D842FD002B97B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059963E25D842FD002B97B3 /* HomeViewController.swift */; };
 		7059964325D842FD002B97B3 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059963F25D842FD002B97B3 /* HomeBuilder.swift */; };
 		7059964425D842FD002B97B3 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059964025D842FD002B97B3 /* HomeInteractor.swift */; };
+		7059964725D84785002B97B3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059964625D84785002B97B3 /* NetworkService.swift */; };
+		7059964B25D84804002B97B3 /* UserStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059964A25D84804002B97B3 /* UserStream.swift */; };
+		7059964D25D84814002B97B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059964C25D84814002B97B3 /* User.swift */; };
 		70A97F6725D8275F00FA172E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A97F6625D8275F00FA172E /* AppDelegate.swift */; };
 		70A97F6925D8275F00FA172E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A97F6825D8275F00FA172E /* SceneDelegate.swift */; };
 		70A97F7025D8276000FA172E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A97F6F25D8276000FA172E /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		7059963E25D842FD002B97B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7059963F25D842FD002B97B3 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		7059964025D842FD002B97B3 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		7059964625D84785002B97B3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7059964A25D84804002B97B3 /* UserStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStream.swift; sourceTree = "<group>"; };
+		7059964C25D84814002B97B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		70A97F6325D8275F00FA172E /* Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A97F6625D8275F00FA172E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70A97F6825D8275F00FA172E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +166,31 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		7059964525D84774002B97B3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7059964625D84785002B97B3 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7059964825D847EF002B97B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7059964925D847F3002B97B3 /* Streams */,
+				7059964C25D84814002B97B3 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7059964925D847F3002B97B3 /* Streams */ = {
+			isa = PBXGroup;
+			children = (
+				7059964A25D84804002B97B3 /* UserStream.swift */,
+			);
+			path = Streams;
+			sourceTree = "<group>";
+		};
 		70A97F5A25D8275F00FA172E = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +216,8 @@
 		70A97F6525D8275F00FA172E /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				7059964825D847EF002B97B3 /* Models */,
+				7059964525D84774002B97B3 /* Services */,
 				70B0EA8625D82E8E006EAA9B /* AppComponent.swift */,
 				70B0EA7C25D82E22006EAA9B /* RIBs */,
 				70A97F6625D8275F00FA172E /* AppDelegate.swift */,
@@ -519,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7059964D25D84814002B97B3 /* User.swift in Sources */,
 				7059963825D83F26002B97B3 /* LoggedInBuilder.swift in Sources */,
 				70B0EA9A25D837D1006EAA9B /* ViewController.swift in Sources */,
 				70B0EA8325D82E5F006EAA9B /* RootViewController.swift in Sources */,
@@ -529,7 +563,9 @@
 				70B0EA8225D82E5F006EAA9B /* RootRouter.swift in Sources */,
 				70B0EA8525D82E5F006EAA9B /* RootInteractor.swift in Sources */,
 				7059963925D83F26002B97B3 /* LoggedInInteractor.swift in Sources */,
+				7059964725D84785002B97B3 /* NetworkService.swift in Sources */,
 				7059964125D842FD002B97B3 /* HomeRouter.swift in Sources */,
+				7059964B25D84804002B97B3 /* UserStream.swift in Sources */,
 				70B0EA9025D8324A006EAA9B /* LoggedOutInteractor.swift in Sources */,
 				70B0EA8D25D8324A006EAA9B /* LoggedOutRouter.swift in Sources */,
 				70B0EA9225D8328D006EAA9B /* RootComponent+LoggedOut.swift in Sources */,
